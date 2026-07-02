@@ -201,4 +201,64 @@ Checks Terraform configuration for syntax and configuration errors.
 - Terraform State
 - Remote Backend
 - GitHub Secrets
-- CI vs CD
+- CI vs CDs
+
+
+## Terraform Versions
+
+### Purpose
+
+The `versions.tf` file defines:
+
+- The minimum Terraform version required.
+- The providers used by the project.
+- Provider version constraints for consistent deployments.
+
+### Key Concepts
+
+- `required_version` ensures compatibility.
+- `required_providers` tells Terraform which cloud provider to use.
+- Version constraints help prevent breaking changes.
+
+
+## Terraform Providers
+
+### Purpose
+
+A provider allows Terraform to communicate with a cloud platform or service.
+
+### AWS Provider
+
+The AWS provider enables Terraform to create and manage AWS resources such as:
+
+- Amazon S3
+- Amazon EC2
+- Amazon VPC
+- Amazon RDS
+
+### Default Tags
+
+Default tags automatically apply consistent metadata to every AWS resource created by the project.
+
+
+## Terraform Variables
+
+### Purpose
+
+Variables allow Terraform configurations to be flexible and reusable.
+
+### Benefits
+
+- Avoid hardcoding values.
+- Make projects reusable.
+- Support multiple environments.
+- Improve readability.
+
+### Common Variable Types
+
+- string
+- number
+- bool
+- list
+- map
+- object
