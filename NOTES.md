@@ -262,3 +262,81 @@ Variables allow Terraform configurations to be flexible and reusable.
 - list
 - map
 - object
+
+
+## Amazon S3 Versioning
+
+### Purpose
+
+Versioning preserves multiple versions of an object stored in an S3 bucket.
+
+### Benefits
+
+- Recover deleted files
+- Restore previous versions
+- Protect against accidental overwrites
+- Improve disaster recovery
+
+### Terraform Resource
+
+`aws_s3_bucket_versioning`
+
+## Amazon S3 Server-Side Encryption
+
+### Purpose
+
+Server-side encryption protects data stored in Amazon S3 by encrypting objects at rest.
+
+### Benefits
+
+- Protects sensitive data
+- Meets compliance requirements
+- Improves security
+
+### Encryption Used
+
+- AES256 (Amazon S3 Managed Keys)
+
+### Terraform Resource
+
+`aws_s3_bucket_server_side_encryption_configuration`
+
+
+## Amazon S3 Public Access Block
+
+### Purpose
+
+Prevents accidental public exposure of S3 buckets and objects.
+
+### Security Controls
+
+- Block Public ACLs
+- Ignore Public ACLs
+- Block Public Bucket Policies
+- Restrict Public Buckets
+
+### Best Practice
+
+Enable all four settings unless the bucket is intentionally designed to be public.
+
+
+## Amazon S3 Ownership Controls
+
+### Purpose
+
+Defines who owns objects uploaded into an S3 bucket.
+
+### Recommended Setting
+
+BucketOwnerEnforced
+
+### Benefits
+
+- Simplifies permissions
+- Eliminates ACL complexity
+- Improves security
+- Follows AWS best practices
+
+### Terraform Resource
+
+`aws_s3_bucket_ownership_controls`
