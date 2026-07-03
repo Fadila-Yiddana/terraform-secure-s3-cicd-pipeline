@@ -20,7 +20,7 @@ The infrastructure created in this project follows AWS security best practices b
 ## Architecture
 
 <p align="center">
-  <img src="diagrams/terraform-secure-s3-cicd-pipeline.png" width="900">
+  <img src="diagrams/terraform-cicd-architecture.png" width="900" alt="Terraform Secure S3 CI/CD Pipeline Architecture">
 </p>
 
 ---
