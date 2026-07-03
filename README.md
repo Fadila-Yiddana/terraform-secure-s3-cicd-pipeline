@@ -25,7 +25,7 @@ The infrastructure created in this project follows AWS security best practices b
        width="900">
 </p>
 
-**Figure 1:** GitHub Actions validates the Terraform configuration by running a custom Python validation script, `terraform fmt`, `terraform init`, and `terraform validate` before infrastructure changes can be deployed.
+**> Diagram represents my implementation of a GitHub Actions CI/CD pipeline for Terraform infrastructure. Created and customized as part of my DevOps project.
 
 ---
 
