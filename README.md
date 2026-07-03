@@ -20,8 +20,12 @@ The infrastructure created in this project follows AWS security best practices b
 ## Architecture
 
 <p align="center">
-  <img src="diagrams/terraform-cicd-architecture.png" width="900" alt="Terraform Secure S3 CI/CD Pipeline Architecture">
+  <img src="diagrams/terraform-cicd-architecture.png"
+       alt="Terraform Secure S3 CI/CD Pipeline Architecture"
+       width="900">
 </p>
+
+**Figure 1:** GitHub Actions validates the Terraform configuration by running a custom Python validation script, `terraform fmt`, `terraform init`, and `terraform validate` before infrastructure changes can be deployed.
 
 ---
 
