@@ -1,34 +1,27 @@
-# Terraform AWS CI/CD Pipeline
+# Terraform Secure S3 CI/CD Pipeline
 
-[![Terraform CI Pipeline](https://github.com/Fadila-Yiddana/terraform-aws-cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/Fadila-Yiddana/terraform-aws-cicd-pipeline/actions/workflows/terraform.yml)
+[![Terraform CI Pipeline](https://github.com/Fadila-Yiddana/terraform-secure-s3-cicd-pipeline/actions/workflows/terraform.yml/badge.svg)](https://github.com/Fadila-Yiddana/terraform-secure-s3-cicd-pipeline/actions/workflows/terraform.yml)
 
 ## Project Overview
 
-This project demonstrates how to build a production-style CI/CD pipeline for Terraform using GitHub Actions and Python.
+This project demonstrates how to build a production-style Continuous Integration (CI) pipeline for Terraform using GitHub Actions and Python while provisioning secure AWS infrastructure.
 
-Every time code is pushed to GitHub, the pipeline automatically validates the Terraform project before infrastructure can be deployed.
+The pipeline automatically validates Infrastructure as Code before deployment by performing Python validation, Terraform formatting checks, initialization, and configuration validation.
 
-This project demonstrates Infrastructure as Code (IaC), automation, continuous integration, and cloud engineering best practices.
+The infrastructure created in this project follows AWS security best practices by enabling:
+
+- Server-side encryption
+- Bucket versioning
+- Public access block
+- Bucket ownership controls
 
 ---
 
 ## Architecture
 
 <p align="center">
-<img src="diagrams/terraform-cicd-architecture.png" width="900">
+  <img src="diagrams/terraform-secure-s3-cicd-pipeline.png" width="900">
 </p>
-
----
-
-## Pipeline Workflow
-
-1. Developer pushes code to GitHub.
-2. GitHub Actions starts automatically.
-3. Python validates the project structure.
-4. Terraform formatting is checked.
-5. Terraform initialization runs.
-6. Terraform validation is performed.
-7. Pipeline reports success.
 
 ---
 
@@ -37,71 +30,84 @@ This project demonstrates Infrastructure as Code (IaC), automation, continuous i
 - Terraform
 - GitHub Actions
 - Python
+- AWS S3
 - Git
-- AWS
 - Infrastructure as Code (IaC)
 
 ---
 
 ## Project Structure
 
-```
-terraform-aws-cicd-pipeline
+```text
+terraform-secure-s3-cicd-pipeline/
 │
 ├── .github/
 │   └── workflows/
 │       └── terraform.yml
 │
-├── terraform/
-│   ├── versions.tf
-│   ├── providers.tf
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-│
 ├── python/
 │   └── validate.py
 │
-├── diagrams/
-│   └── terraform-cicd-architecture.png
+├── terraform/
+│   ├── versions.tf
+│   ├── providers.tf
+│   ├── variables.tf
+│   ├── main.tf
+│   └── outputs.tf
 │
+├── diagrams/
 ├── NOTES.md
-├── .gitignore
 └── README.md
 ```
 
 ---
 
-## Learning Objectives
+## CI/CD Workflow
 
-This project demonstrates:
+The GitHub Actions pipeline automatically performs the following checks whenever code is pushed to the repository:
 
-- Infrastructure as Code
-- CI/CD pipelines
+1. Checkout repository
+2. Setup Python
+3. Run Python validation
+4. Setup Terraform
+5. Terraform Format Check
+6. Terraform Initialize
+7. Terraform Validate
+
+Only validated Infrastructure as Code proceeds through the pipeline.
+
+---
+
+## AWS Security Features
+
+The deployed infrastructure includes:
+
+- Amazon S3 Bucket
+- Bucket Versioning
+- Server-side Encryption (AES256)
+- Public Access Block
+- Bucket Ownership Controls
+
+---
+
+## Skills Demonstrated
+
+- Terraform
+- AWS S3
 - GitHub Actions
-- Python automation
-- Terraform validation
-- Git workflow
-- AWS Infrastructure
+- CI/CD
+- Python Automation
+- Infrastructure as Code
+- Cloud Security
+- Git
+- DevOps
 
 ---
 
 ## Future Improvements
 
-- Deploy infrastructure automatically
-- Add Terraform Plan stage
-- Add Terraform Apply stage
-- Configure AWS authentication using GitHub Secrets
-- Store Terraform state remotely in Amazon S3
-- Add Terraform security scanning
-- Add cost estimation
-
----
-
-## Author
-
-**Fadila Yiddana**
-
-AWS Certified Solutions Architect – Associate
-
-Cloud Engineer | Terraform | AWS | Python | GitHub Actions
+- Remote Terraform State
+- DynamoDB State Locking
+- Multi-environment deployments
+- Terraform Plan artifacts
+- Automated deployment approvals
