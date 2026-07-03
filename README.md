@@ -25,7 +25,7 @@ The infrastructure created in this project follows AWS security best practices b
        width="900">
 </p>
 
-**> Diagram represents my implementation of a GitHub Actions CI/CD pipeline for Terraform infrastructure. Created and customized as part of my DevOps project.
+> Diagram represents my implementation of a GitHub Actions CI/CD pipeline for Terraform infrastructure. Created and customized as part of my DevOps project.
 
 ---
 
