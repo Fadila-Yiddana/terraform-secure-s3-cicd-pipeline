@@ -1,5 +1,14 @@
 output "bucket_name" {
   description = "Name of the S3 bucket."
+  value       = aws_s3_bucket.project_bucket.bucket
+}
 
-  value = aws_s3_bucket.terraform_demo.bucket
+output "bucket_arn" {
+  description = "ARN of the S3 bucket."
+  value       = aws_s3_bucket.project_bucket.arn
+}
+
+output "bucket_region" {
+  description = "AWS Region"
+  value       = var.aws_region
 }
