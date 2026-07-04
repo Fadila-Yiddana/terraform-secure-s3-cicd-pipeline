@@ -4,9 +4,11 @@
 
 ## Project Overview
 
-This project demonstrates how to build a production-style Continuous Integration (CI) pipeline for Terraform using GitHub Actions and Python while provisioning secure AWS infrastructure.
+This project demonstrates a production-style CI/CD pipeline for Terraform using GitHub Actions and Python to automatically validate Infrastructure as Code (IaC) before deploying secure AWS infrastructure.
 
 The pipeline automatically validates Infrastructure as Code before deployment by performing Python validation, Terraform formatting checks, initialization, and configuration validation.
+
+The infrastructure provisions a secure Amazon S3 bucket configured according to AWS security best practices.
 
 The infrastructure created in this project follows AWS security best practices by enabling:
 
@@ -36,7 +38,7 @@ The infrastructure created in this project follows AWS security best practices b
 - Python
 - AWS S3
 - Git
-- Infrastructure as Code (IaC)
+- Infrastructure as Code (Terraform)
 
 ---
 
@@ -84,7 +86,7 @@ Only validated Infrastructure as Code proceeds through the pipeline.
 
 ## AWS Security Features
 
-The deployed infrastructure includes:
+The Terraform configuration provisions an Amazon S3 bucket with the following security controls:
 
 - Amazon S3 Bucket
 - Bucket Versioning
@@ -97,21 +99,41 @@ The deployed infrastructure includes:
 ## Skills Demonstrated
 
 - Terraform
-- AWS S3
 - GitHub Actions
-- CI/CD
+- AWS S3
+- Infrastructure as Code (IaC)
+- CI/CD Pipelines
 - Python Automation
-- Infrastructure as Code
 - Cloud Security
 - Git
 - DevOps
 
 ---
 
+
+---
+
+## Validation
+
+The project has been successfully validated using:
+
+- terraform fmt
+- terraform validate
+- GitHub Actions CI pipeline
+
+All commits automatically trigger the CI pipeline to verify the Terraform configuration before deployment.
+
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
 ## Future Improvements
 
-- Remote Terraform State
-- DynamoDB State Locking
-- Multi-environment deployments
 - Terraform Plan artifacts
-- Automated deployment approvals
+- Remote Terraform state (Amazon S3)
+- DynamoDB state locking
+- Multi-environment deployments
+- Manual approval before production deployment
